@@ -6,20 +6,20 @@ import { CgProfile } from "react-icons/cg";
 
 export const Navbar = () => {
   return (
-    <div className="h-[150px] bg-primary w-full flex justify-between px-5 fixed">
-      <div className="items-end">
+    <div className="h-[75px] bg-primary w-full flex justify-between px-5 fixed">
+      <div className="flex justify-center items-center">
         <Link href="/">
-          <div>
+          <div className="">
             <Image
               src={"/STEM_LOGO.png"}
-              width={150}
-              height={150}
+              width={70}
+              height={70}
               alt={"Stem Logo"}
             />
           </div>
         </Link>
       </div>
-      <div className="text-[70px] flex justify-center items-center">
+      <div className="text-[35px] flex justify-center items-center">
         <div className="px-10">
           <Link href="/">
             <TbUpload color="white" />

@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar/>
-        <div className="pt-[150px] flex text-center justify-center items-center">
+        <div className="pt-[75px] flex text-center justify-center items-center">
         {children}
         </div>
         <Footer/>
