@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="bg-secondary">
       <header>
         <title>Homepage</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,7 +20,7 @@ export default function Home() {
         <div className="mx-20 px-20 pt-5 font-Montserrat">
           <div className="my-5">
           <h1 className="text-4xl font-bold underline">What is STEM7?</h1>
-          <p>
+          <p className="text-xl">
             The STEM 7 are skills and behaviours employers look for in potential
             employees. They are essential for you to progress to further study
             or employment. Although STEM 7 are behaviours desired by science,
@@ -32,7 +32,7 @@ export default function Home() {
           </div>
           <div className="my-5">
           <h2 className="text-2xl font-semibold underline">Creative Thinking</h2>
-          <p>
+          <p className="text-xl">
             Creative thinking involves putting forward your own ideas and
             solutions. Think of examples where you have suggested a method of
             approaching a task or a way of fixing a problem.
@@ -40,7 +40,7 @@ export default function Home() {
           </div>
           <div className="my-5">
           <h2 className="text-2xl font-semibold underline">Communication</h2>
-          <p>
+          <p className="text-xl">
             Communication involves clearly explaining what you mean and doing
             your best to understand others. Think of examples where you have
             explained a tricky subject or ensured you interpreted directions
@@ -49,7 +49,7 @@ export default function Home() {
           </div>
           <div className="my-5">
           <h2 className="text-2xl font-semibold underline">Problem Solving</h2>
-          <p>
+          <p className="text-xl">
             Problem solving involves identifying key issues, using knowledge and
             experience to tackle problems, developing and testing possible
             solutions and not being put off by setbacks. Think of examples where
@@ -59,7 +59,7 @@ export default function Home() {
           </div>
           <div className="my-5">
           <h2 className="text-2xl font-semibold underline">Intellectual Curiosity</h2>
-          <p>
+          <p className="text-xl">
             Intellectual curiosity involves being willing to learn new things;
             learning from your successes and failures, evolving and doing things
             better. Think of examples where you have challenged yourself to
@@ -68,7 +68,7 @@ export default function Home() {
           </div>
           <div className="my-5">
           <h2 className="text-2xl font-semibold underline">Data-Driven Decisions</h2>
-          <p>
+          <p className="text-xl">
             Data-driven decisions involve using numbers and data to obtain
             meaningful information. Think of examples where you have used data
             and statistics to inform a decision or draw a conclusion.
@@ -76,7 +76,7 @@ export default function Home() {
           </div>
           <div className="my-5">
           <h2 className="text-2xl font-semibold underline">Flexibility</h2>
-          <p>
+          <p className="text-xl">
             Flexibility involves learning new things, adapting and improving as
             well as planning your work to meet deadlines and targets, organising
             your time, monitoring your progress and adjusting your work to stay
@@ -86,7 +86,7 @@ export default function Home() {
           </div>
           <div className="my-5">
           <h2 className="text-2xl font-semibold underline">Collaboration</h2>
-          <p>
+          <p className="text-xl">
             Collaboration involves understanding how to best work with people
             with different skills, backgrounds and personalities while
             respecting, considering and valuing others. Think of examples of
