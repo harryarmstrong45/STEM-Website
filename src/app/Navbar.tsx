@@ -26,7 +26,7 @@ export const Navbar = () => {
           </Link>
         </div>
         <div>
-          <Link href="/">
+          <Link href="LogIn">
             <CgProfile color="white" />
           </Link>
         </div>
