@@ -38,11 +38,16 @@ export default function LoginPage() {
     } catch (error) {
       console.error(error);
     }
+
   };
 
   console.log(userData);
 
   return (
+    <>
+    <head>
+      <title>Log In</title>
+    </head>
     <div className="h-[calc(100vh-150px)] flex justify-center items-center">
       <div>
         <form
@@ -69,17 +74,16 @@ export default function LoginPage() {
           </button>
         </form>
 
-        {userData && <div>Logged in as {userData.firstName}</div>}
-
         {/* <Link href="/Register">Regiser</Link> */}
         <div className="mt-6">
           <h1>Don't have an account?</h1>
           <br></br>
-          <a href="./CreateAccount">
+          <a className="text-NormalLink hover:text-HoveredLink hover:underline hover:font-bold font-semibold" href="./CreateAccount">
             <h1>Create One</h1>
           </a>
         </div>
       </div>
     </div>
+    </>
   );
 }

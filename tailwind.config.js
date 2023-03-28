@@ -5,7 +5,9 @@ module.exports = {
     colors: {
       "primary": "#147fcb",
       "secondary": "#d0e5f5",
-      "white": "#FFFFFF"
+      "white": "#FFFFFF",
+      "NormalLink": "#0026a7",
+      "HoveredLink": "#0039fc",
     },
     extend: {
       fontFamily: {

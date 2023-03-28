@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { TbUpload } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
+import AccountButton from "./Components/AccountButton";
 
 export const Navbar = () => {
   return (
@@ -25,11 +26,7 @@ export const Navbar = () => {
             <TbUpload color="white" />
           </Link>
         </div>
-        <div>
-          <Link href="LogIn">
-            <CgProfile color="white" />
-          </Link>
-        </div>
+        <AccountButton></AccountButton>
       </div>
     </div>
   );
