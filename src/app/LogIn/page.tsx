@@ -16,27 +16,25 @@ export default function LoginPage() {
   const [userData, setUserData] = useState<any | null>(null);
 
   useEffect(() => {
-    const storedUserData = Cookies.get("userData");
+    const storedUserData = Cookies.get("userData")
+    
     if (storedUserData) {
-      const parsedUserData = JSON.parse(storedUserData);
-      pb.collection(pbCollection)
-        .getOne(parsedUserData.id)
-        .then((data: any) => {
-          setUserData(data);
-          Cookies.set("userData", JSON.stringify(data));
-        });
+      pb.authStore.loadFromCookie(storedUserData || '');
+      pb.collection(pbCollection).authRefresh();
     }
-  }, []);
+
+  }, []); 
+  
+  pb.authStore.onChange ((auth) => {
+    // console.log("authStore changed ", auth)
+    Cookies.set("userData", pb.authStore.exportToCookie());
+    setUserData(pb.authStore.model)
+  })
 
   const handleLogin = async (e: any) => {
     e.preventDefault();
     try {
-      const data = await pb
-        .collection(pbCollection)
-        .authWithPassword(email, password);
-      setUserData(data.record);
-      console.log(JSON.stringify(data.record));
-      Cookies.set("userData", JSON.stringify(data.record));
+      pb.collection(pbCollection).authWithPassword(email, password);
     } catch (error) {
       console.error(error);
     }
@@ -46,33 +44,42 @@ export default function LoginPage() {
 
   return (
     <div className="h-[calc(100vh-150px)] flex justify-center items-center">
-      <form className="my-100 flex flex-col -mt-[150px] justify-center items-center" onSubmit={handleLogin}>
-        <h1 className="text-4xl">Log In</h1>
-        <input
-          className={inputformatText}
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          className={inputformatText}
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button
-          className={inputformatButton} 
-          type="submit"
+      <div>
+        <form
+          className="my-100 flex flex-col -mt-[150px] justify-center items-center"
+          onSubmit={handleLogin}
         >
-          Login
-        </button>
-      </form>
+          <div className="text-4xl border-b-2 w-full pb-2">Log In</div>
+          <input
+            className={inputformatText}
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            className={inputformatText}
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button className={inputformatButton} type="submit">
+            Login
+          </button>
+        </form>
 
-      {userData && <div>Logged in as {userData.firstName}</div>}
+        {userData && <div>Logged in as {userData.firstName}</div>}
 
-      {/* <Link href="/Register">Regiser</Link> */}
+        {/* <Link href="/Register">Regiser</Link> */}
+        <div className="mt-6">
+          <h1>Don't have an account?</h1>
+          <br></br>
+          <a href="./CreateAccount">
+            <h1>Create One</h1>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
