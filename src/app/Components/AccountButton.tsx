@@ -10,24 +10,26 @@ const pb = new PocketBase("http://127.0.0.1:8090/");
 
 export default function AccountButton() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [count, setCount] = useState(0);
   useEffect(() => {
-    const loginStatus = Cookies.get('userData');
-    if(loginStatus) {
+    const intervalId = setInterval(() => {
+      const loginStatus = Cookies.get("userData");
+      if (loginStatus) {
         setIsLoggedIn(true);
-    }
+      }
+      setCount((c) => c + 1);
+    }, 1000);
+
+    return () => clearInterval(intervalId);
   }, []);
 
-  console.log(isLoggedIn);
-  console.log("cookie");
   return (
     <>
-      {isLoggedIn && (
-        <div>
-          <Link href="LogIn">
-            <CgProfile color="white" />
-          </Link>
-        </div>
-      )}
+      <div>
+        <Link href={isLoggedIn ? "Profile" : "LogIn"}>
+          <CgProfile color="white" />
+        </Link>
+      </div>
     </>
   );
 }
