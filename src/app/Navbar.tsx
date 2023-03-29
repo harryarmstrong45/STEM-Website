@@ -21,7 +21,7 @@ export const Navbar = () => {
         </Link>
       </div>
       <div className="text-[35px] flex justify-center items-center">
-        <div className="px-10">
+        <div className="border-r-2 border-white px-4">
           <Link href="/">
             <TbUpload color="white" />
           </Link>
