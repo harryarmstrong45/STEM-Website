@@ -13,7 +13,7 @@ const inputformatText = "my-2 py-3 border-2 text-center rounded-2xl px-[60px]";
 const inputformatButton =
   "my-4 py-3 border-2 text-center rounded-2xl w-[150px]";
 
-export default function page() {
+export default function Page() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");

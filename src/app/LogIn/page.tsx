@@ -80,7 +80,7 @@ export default function LoginPage() {
 
           {/* <Link href="/Register">Regiser</Link> */}
           <div className="mt-6">
-            <h1>Don't have an account?</h1>
+            <h1>Don&apos;t have an account?</h1>
             <br></br>
             <a
               className="text-NormalLink hover:text-HoveredLink hover:underline hover:font-bold font-semibold"
